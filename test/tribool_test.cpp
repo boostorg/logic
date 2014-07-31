@@ -130,6 +130,8 @@ int test_main(int, char*[])
   // Clang compiles well.
   //
   // constexpr bool res_safe_bool = tribool(true); // false
+  // constexpr tribool xxx = (tribool(true) || tribool(indeterminate));
+  // static_assert(xxx, "Must be true!");
 #endif
 
   std::cout << "no errors detected\n";
