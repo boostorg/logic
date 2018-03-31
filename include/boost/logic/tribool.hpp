@@ -109,10 +109,21 @@ public:
    * \returns true if the 3-state boolean is true, false otherwise
    * \throws nothrow
    */
+#if !defined( BOOST_NO_CXX11_EXPLICIT_CONVERSION_OPERATORS )
+
+  BOOST_CONSTEXPR explicit operator bool () const BOOST_NOEXCEPT
+  {
+    return value == true_value;
+  }
+
+#else
+
   BOOST_CONSTEXPR operator safe_bool() const BOOST_NOEXCEPT
   {
     return value == true_value? &dummy::nonnull : 0;
   }
+
+#endif
 
   /**
    * The actual stored value in this 3-state boolean, which may be false, true,
