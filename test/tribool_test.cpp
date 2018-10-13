@@ -3,6 +3,7 @@
 // 1.0. (See accompanying file LICENSE_1_0.txt or copy at
 // http://www.boost.org/LICENSE_1_0.txt)
 
+#include <boost/core/ignore_unused.hpp>
 #include <boost/logic/tribool.hpp>
 #include <boost/test/minimal.hpp>
 #include <iostream>
@@ -126,6 +127,7 @@ int test_main(int, char*[])
   BOOST_CHECK(sizeof(array_ands) / sizeof(char) == 3);
 
   constexpr bool res_safe_bool = static_cast<bool>( tribool(true) );
+  boost::ignore_unused(res_safe_bool);
   constexpr tribool xxx = (tribool(true) || tribool(indeterminate));
   static_assert(xxx, "Must be true!");
 #endif
