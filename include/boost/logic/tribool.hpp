@@ -71,6 +71,7 @@ indeterminate(tribool x,
  */
 class tribool
 {
+#if defined( BOOST_NO_CXX11_EXPLICIT_CONVERSION_OPERATORS )
 private:
   /// INTERNAL ONLY
   struct dummy {
@@ -78,6 +79,7 @@ private:
   };
 
   typedef void (dummy::*safe_bool)();
+#endif
 
 public:
   /**
