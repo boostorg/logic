@@ -175,7 +175,7 @@ BOOST_CONSTEXPR inline tribool operator!(tribool x) BOOST_NOEXCEPT
 }
 
 /**
- * \brief Computes the logical conjuction of two tribools
+ * \brief Computes the logical conjunction of two tribools
  *
  * \returns the result of logically ANDing the two tribool values,
  * according to the following table:
