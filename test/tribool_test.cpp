@@ -150,6 +150,5 @@ int main()
 # endif
 #endif
 
-  std::cout << "no errors detected\n";
   return boost::report_errors();
 }

@@ -118,6 +118,5 @@ int main()
     BOOST_TEST(false);
   }
 
-  std::cout << "no errors detected\n";
   return boost::report_errors();
 }
