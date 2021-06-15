@@ -71,8 +71,8 @@ indeterminate(tribool x,
  */
 class tribool
 {
-#if defined( BOOST_NO_CXX11_EXPLICIT_CONVERSION_OPERATORS )
 private:
+#if defined( BOOST_NO_CXX11_EXPLICIT_CONVERSION_OPERATORS )
   /// INTERNAL ONLY
   struct dummy {
     void nonnull() {};
@@ -80,6 +80,12 @@ private:
 
   typedef void (dummy::*safe_bool)();
 #endif
+
+  /**
+   * The actual stored value in this 3-state boolean, which may be false, true,
+   * or indeterminate.
+   */
+  enum value_t { false_value, true_value, indeterminate_value } value;
 
 public:
   /**
@@ -126,12 +132,8 @@ public:
   }
 
 #endif
-
-  /**
-   * The actual stored value in this 3-state boolean, which may be false, true,
-   * or indeterminate.
-   */
-  enum value_t { false_value, true_value, indeterminate_value } value;
+friend BOOST_CONSTEXPR inline bool indeterminate(tribool x, detail::indeterminate_t) BOOST_NOEXCEPT;
+friend BOOST_CONSTEXPR inline tribool operator!(tribool x) BOOST_NOEXCEPT;
 };
 
 // Check if the given tribool has an indeterminate value. Also doubles as a
@@ -463,7 +465,7 @@ inline bool                                                             \
 Name(boost::logic::tribool x,                                           \
      boost::logic::detail::indeterminate_t =                            \
        boost::logic::detail::indeterminate_t())                         \
-{ return x.value == boost::logic::tribool::indeterminate_value; }
+{ return boost::logic::indeterminate(x); }
 
 #endif // BOOST_LOGIC_TRIBOOL_HPP
 
