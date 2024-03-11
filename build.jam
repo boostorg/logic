@@ -1,0 +1,21 @@
+# Copyright René Ferdinand Rivera Morell 2023
+# Distributed under the Boost Software License, Version 1.0.
+# (See accompanying file LICENSE_1_0.txt or copy at
+# http://www.boost.org/LICENSE_1_0.txt)
+
+import project ;
+
+project /boost/logic
+    : common-requirements
+        <include>include
+        <source>/boost/config//boost_config
+        <source>/boost/core//boost_core
+    ;
+
+explicit
+    [ alias boost_logic ]
+    [ alias all : boost_logic test ]
+    ;
+
+call-if : boost-library logic
+    ;
