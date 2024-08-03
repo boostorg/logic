@@ -2,9 +2,9 @@
 
 # Copyright (C) 2002-2003 Douglas Gregor
 
-# Use, modification and distribution is subject to the Boost Software License, 
-# Version 1.0. (See accompanying file LICENSE_1_0.txt or copy at 
-# http://www.boost.org/LICENSE_1_0.txt) 
+# Use, modification and distribution is subject to the Boost Software License,
+# Version 1.0. (See accompanying file LICENSE_1_0.txt or copy at
+# http://www.boost.org/LICENSE_1_0.txt)
 
 # For more information, see http://www.boost.org/
 
@@ -14,6 +14,8 @@ import regex ;
 import testing ;
 
 path-constant self : . ;
+
+project : requirements <library>/boost/logic//boost_logic ;
 
 rule test-expected-failures
 {
@@ -53,7 +55,7 @@ rule test-header-isolation
     return $(all_rules) ;
 }
 
-  test-suite logic  : 
+  test-suite logic  :
     [ test-expected-failures ]
     [ test-header-isolation ]
     [ run tribool_test.cpp ]
