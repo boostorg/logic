@@ -48,9 +48,9 @@ typedef bool (*indeterminate_keyword_t)(tribool, detail::indeterminate_t);
 /**
  * \brief Keyword and test function for the indeterminate tribool value
  *
- * The \c indeterminate function has a dual role. It's first role is
+ * The \c indeterminate function has a dual role. Its first role is
  * as a unary function that tells whether the tribool value is in the
- * "indeterminate" state. It's second role is as a keyword
+ * "indeterminate" state. Its second role is as a keyword
  * representing the indeterminate (just like "true" and "false"
  * represent the true and false states). If you do not like the name
  * "indeterminate", and would prefer to use a different name, see the
