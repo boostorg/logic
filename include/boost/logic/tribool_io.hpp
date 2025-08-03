@@ -140,7 +140,7 @@ public:
   /// Returns the name for the indeterminate value
   string_type name() const { return name_; }
 
-  /// Uniquily identifies this facet with the locale.
+  /// Uniquely identifies this facet with the locale.
   static std::locale::id id;
 
 private:
@@ -224,7 +224,7 @@ operator<<(std::basic_ostream<CharT, Traits>& out,
  * function reads a \c long value from the input stream @p in and
  * converts that value to a tribool. If that value is 0, @p x becomes
  * \c false; if it is 1, @p x becomes \c true; if it is 2, @p becomes
- * \c indetermine; otherwise, the operation fails (and the fail bit is
+ * \c indeterminate; otherwise, the operation fails (and the fail bit is
  * set on the input stream @p in).
  *
  * When <tt>(out.flags() & std::ios_base::boolalpha) != 0</tt>, this
