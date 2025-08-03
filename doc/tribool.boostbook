@@ -191,7 +191,7 @@ cout &lt;&lt; boolalpha &lt;&lt; x; // Produces "false", "true", or "indetermina
   string naming the indeterminate type is contained in the
   <code><classname>indeterminate_name</classname></code> facet. To
   replace the name of the indeterminate state, you need to imbue your
-  stream with a local containing a
+  stream with a local containing an
   <code><classname>indeterminate_name</classname></code> facet, e.g.:</para>
 
   <programlisting><macroname>BOOST_TRIBOOL_THIRD_STATE</macroname>(maybe)
@@ -201,7 +201,7 @@ cout.imbue(test_locale);
 <classname>tribool</classname> x(maybe);
 cout &lt;&lt; boolalpha &lt;&lt; x &lt;&lt; endl; // Prints "maybe"</programlisting>
 
-  <para>If you C++ standard library implementation does not support
+  <para>If your C++ standard library implementation does not support
   locales, <code>tribool</code> input/output will still work, but you
   will be unable to customize the strings printed/parsed when
   <code>boolalpha</code> is set.</para>
